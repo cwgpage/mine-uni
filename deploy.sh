@@ -5,22 +5,20 @@
 set -e
 
 # 生成静态文件
-# npm run build:h5
+npm run build:h5
 
 # 进入生成的文件夹
 cd dist/build/h5/
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
+# 删除旧的 git 仓库
+rm -rf .git
 
-# git init
-# git add -A
-# git commit -m 'deploy'
+# 初始化 git
+git init
+git add -A
+git commit -m 'deploy'
 
-# 如果发布到 https://<USERNAME>.gitee.io
-# git push -f git@gitee.com:<USERNAME>/<USERNAME>.gitee.io.git master
-
-# 如果发布到 https://<USERNAME>.gitee.io/<REPO>
+# 推送到 GitHub Pages
 git push -f git@github.com:cwgpage/mine-uni.git master:pages
 
 cd -
